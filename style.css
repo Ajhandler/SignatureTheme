@@ -1,0 +1,305 @@
+/*
+Theme Name: Signature
+Theme URI: http://underscores.me/
+Author: Alex Handler
+Author URI: https://github.com/Ajhandler
+Description: A Small theme for the good people at Signature Contracting group.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: signature
+Tags: Modern, Architecture, Bootstrap
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Signature is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+    ## Posts and pages
+	## Asides
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+  padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+html,body{height:100%;width:100%;}
+.carousel,.item,.active{height:100%;}
+.carousel-inner{height:100%;}
+#myCarousel{
+  height: 100vh;
+  width: 100vw;
+  height: 100%;
+  width: 100%;
+}
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+
+.carousel{
+  height: 100%;
+  width: 100%;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+}
+.slideimg{
+  max-width: 100%;
+ height: auto;
+}
+
+.oswald{
+  font-family: Oswald;
+  font-size: 4em;
+}
+
+
+
+.carousel-caption {
+margin: -10% auto; 
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction:column;
+
+
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+/* GALLERY CSS
+-------------------------------------------------- */
+.portfolio-item {
+    margin-bottom: 25px;
+}
+
+.work-form{
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+#fullsized_go_prev, #fullsized_go_next {
+  position: absolute;
+  top: 40%;
+  display: block;
+  width: 32px;
+  height: 126px;
+}
+#fullsized_go_prev {
+  left: 0;
+  background: url('jquery-fullsizable.png');
+}
+#fullsized_go_prev:hover {
+    background-position: 0 -126px;
+}
+#fullsized_go_next {
+  right: 0;
+  background: url('jquery-fullsizable.png') -32px 0;
+}
+#fullsized_go_next:hover {
+  background-position: -32px -126px;
+}
+#fullsized_close, #fullsized_fullscreen {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+ #fullsized_close {
+  right: 0;
+  background: url('jquery-fullsizable.png') -64px 0;
+}
+#fullsized_close:hover {
+  background-position: -64px -32px;
+}
+#jquery-fullsizable #fullsized_fullscreen {
+  right: 40px;
+  background: url('jquery-fullsizable.png') -96px 0;
+}
+#fullsized_fullscreen:hover {
+  background-position: -96px -32px;
+}
+:fullscreen #fullsized_fullscreen { background-position: -96px -64px; &:hover {background-position: -96px -96px;} }
+:-webkit-full-screen #fullsized_fullscreen { background-position: -96px -64px; &:hover {background-position: -96px -96px;} }
+:-moz-full-screen #fullsized_fullscreen { background-position: -96px -64px; &:hover {background-position: -96px -96px;} }
+
+#jquery-fullsizable {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 999;
+}
+#jquery-fullsizable.fullsized_spinner {
+  background-image: url(data:image/gif;base64,R0lGODlhEAAQAPIAAAAAAP///zw8PLy8vP///5ycnHx8fGxsbCH+GkNyZWF0ZWQgd2l0aCBhamF4bG9hZC5pbmZvACH5BAAKAAAAIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQACgABACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkEAAoAAgAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkEAAoAAwAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkEAAoABAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQACgAFACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQACgAGACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAAKAAcALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+#jquery-fullsizable #fullsized_image_holder img {
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}
+
+.navbar-wrapper{
+  margin-top: 0;
+  padding-top:20px;
+  ansform.Microsoft.gradient( startColorstr='#48d381', endColorstr='#1ae6635b',GradientType=1 ); /* IE6-9 */
+
+}
+.tew{
+  background: -moz-linear-gradient(left,  rgba(72,211,129,1) 1%, rgba(72,211,129,0.91) 11%, rgba(241,201,60,0.67) 37%, rgba(58,153,216,0.41) 66%, rgba(230,99,91,0.26) 82%, rgba(230,99,91,0.1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(1%,rgba(72,211,129,1)), color-stop(11%,rgba(72,211,129,0.91)), color-stop(37%,rgba(241,201,60,0.67)), color-stop(66%,rgba(58,153,216,0.41)), color-stop(82%,rgba(230,99,91,0.26)), color-stop(100%,rgba(230,99,91,0.1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(72,211,129,1) 1%,rgba(72,211,129,0.91) 11%,rgba(241,201,60,0.67) 37%,rgba(58,153,216,0.41) 66%,rgba(230,99,91,0.26) 82%,rgba(230,99,91,0.1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(72,211,129,1) 1%,rgba(72,211,129,0.91) 11%,rgba(241,201,60,0.67) 37%,rgba(58,153,216,0.41) 66%,rgba(230,99,91,0.26) 82%,rgba(230,99,91,0.1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(72,211,129,1) 1%,rgba(72,211,129,0.91) 11%,rgba(241,201,60,0.67) 37%,rgba(58,153,216,0.41) 66%,rgba(230,99,91,0.26) 82%,rgba(230,99,91,0.1) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(72,211,129,1) 1%,rgba(72,211,129,0.91) 11%,rgba(241,201,60,0.67) 37%,rgba(58,153,216,0.41) 66%,rgba(230,99,91,0.26) 82%,rgba(230,99,91,0.1) 100%); /* W3C */
+filter: progid:DXImageTr
+}
