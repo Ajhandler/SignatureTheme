@@ -28,10 +28,39 @@
 			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'signature' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
+		
+<div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="<?php bloginfo('url')?>"><?php bloginfo('name')?></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <?php /* Primary navigation */
+				wp_nav_menu( array(
+				  'menu' => 'Primary',
+				  'theme_location' => 'Primary',
+				  'depth' => 2,
+				  'container' => false,
+				  'menu_class' => 'nav navbar-nav',
+				  //Process nav menu using our custom nav walker
+				  'walker' => new wp_bootstrap_navwalker())
+				);
+			   ?>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
